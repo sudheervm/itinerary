@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@opencage/geosearch-bundle/dist/css/autocomplete-theme-classic.min.css"
+/>
+
+  <meta charset="utf-8">
+  <title>Itinerary App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1/dist/js/places.min.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+  <header>
+    <h1>Itinerary App</h1>
+  </header>
+  <main>
+    <form>
+      <label for="travel-dates">Start Dates:</label>
+      <input type="date" id="start-date">
+      <label for="travel-dates">Days:</label>
+      <input type="text" id="days">
+      <label for="budget">Budget:</label>
+      <input type="number" id="budget">
+      <label for="destinations">Destinations of Interest:</label>
+      <div id="autocomplete"></div>
+
+
+      <label for="activities">Preferred Activities:</label>
+      <input type="text" id="activities">
+      <button id="submit-btn">Submit</button>
+    </form>
+    <div style="white-space: pre-line" id="results">
+      <!-- Results will be displayed here -->
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@opencage/geosearch-bundle"></script>
+  <script>
+    const options = {
+      key: "oc_gs_codependemo74gzf48ew7fdvs91nba",
+      // countrycode: 'de',
+      language: 'en' // de,en,es,fr
+    };
+
+    opencage.algoliaAutocomplete({
+      container: "#autocomplete",
+      placeholder: "Search for places",
+      plugins: [opencage.OpenCageGeoSearchPlugin(options)]
+    });
+
+  </script>
+  <script src="app.js">
+
+
+
+  </script>
+</body>
+
+</html>
