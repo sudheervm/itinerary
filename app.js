@@ -6,7 +6,7 @@ const endDateInput = document.querySelector('#days');
 const activitiesInput = document.querySelector('#activities');
 const resultsDiv = document.querySelector('#results');
 
-const chatGPTAPIKey = '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';
+const chatGPTAPIKey = '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';
 const chatGPTModel = 'text-davinci-003';
 
 form.addEventListener('submit', e => {
